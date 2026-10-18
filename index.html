@@ -1172,6 +1172,30 @@ function stopFloatingHearts() {
     heartTimer = null;
   }
 }
+    
+const finalPromise = document.getElementById('finalPromise');
+const letterSection = document.getElementById('letter');
+
+function checkFinalPromise() {
+  if (!finalPromise || !letterSection) return;
+
+  const letterIsOpen = letterSection.offsetParent !== null;
+  const position = finalPromise.getBoundingClientRect();
+
+  if (
+    letterIsOpen &&
+    position.top < window.innerHeight * 0.85 &&
+    position.bottom > 0
+  ) {
+    finalPromise.classList.add('show-promise');
+    window.removeEventListener('scroll', checkFinalPromise);
+  }
+}
+
+window.addEventListener('scroll', checkFinalPromise, {
+  passive: true
+});
+
   </script>
 </body>
 </html>
