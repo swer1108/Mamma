@@ -1207,8 +1207,20 @@ function startFloatingHearts() {
 
   if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
-  const symbols = ['❤️', '💕', '♡', '💗', '♥', '💖'];
-  const colors = ['#d85f86', '#c2a5df', '#e8a6bb', '#f19ab5'];
+ const symbols = [
+  '❤️', '💕', '♡', '💗', '♥', '💖',
+  '💜', '🩷', '💞', '💓', '🤍', '💘'
+];
+
+const colors = [
+  '#d85f86', // rose pink
+  '#c2a5df', // lavender
+  '#e8a6bb', // soft pink
+  '#f19ab5', // blush pink
+  '#d9c9f2', // light lavender
+  '#ff69b4', // bright pink
+  '#b794e6'  // deeper lavender
+];
 
   function createHeart() {
     const heart = document.createElement('span');
@@ -1235,13 +1247,13 @@ function startFloatingHearts() {
   }
 
   // Start with a little shower of hearts ❤️
-  for (let i = 0; i < 8; i++) {
-    setTimeout(createHeart, i * 180);
-  }
-
-  // Keep hearts floating while the message is open
-  heartTimer = setInterval(createHeart, 450);
+ // Start with a bigger shower of hearts ❤️💜🩷
+for (let i = 0; i < 18; i++) {
+  setTimeout(createHeart, i * 100);
 }
+
+// Keep a gentle stream of hearts floating
+heartTimer = setInterval(createHeart, 250);
 
 function stopFloatingHearts() {
   if (heartTimer !== null) {
