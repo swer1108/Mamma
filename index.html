@@ -941,16 +941,122 @@
     <circle cx="50" cy="49" r="13" fill="url(#daisyGold)" stroke="#bd8c3e" stroke-width="2"/>
   </svg>
 
-  <svg class="garden-flower rose" viewBox="0 0 100 150" aria-hidden="true">
-    <path d="M50 148 Q45 95 52 53" fill="none" stroke="url(#stemGreen)" stroke-width="4"/>
-    <path d="M48 113 Q20 104 20 85 Q42 91 48 113Z" fill="#79a66d"/>
-    <g stroke="#9d2547" stroke-width="1.4">
-      <path d="M50 59 C19 61 17 35 34 29 C22 10 49 3 58 20 C80 10 91 34 72 49 C69 63 57 68 50 59Z" fill="url(#roseShade)"/>
-      <path d="M50 55 C31 54 28 34 42 29 C51 17 70 30 66 43 C63 55 56 59 50 55Z" fill="#f68ba5"/>
-      <path d="M49 48 C37 38 48 25 59 33 C69 41 59 51 49 48Z" fill="#c93159"/>
-      <path d="M49 43 C46 34 58 32 60 40 C59 46 53 47 49 43Z" fill="#8f173c"/>
-    </g>
-  </svg>
+ 
+<svg class="garden-flower rose" viewBox="0 0 100 150" aria-hidden="true">
+  <defs>
+    <radialGradient id="thirdRoseBloom" cx="30%" cy="20%" r="85%">
+      <stop offset="0" stop-color="#ffe1e9"/>
+      <stop offset=".35" stop-color="#f7a0bb"/>
+      <stop offset=".7" stop-color="#dc5b88"/>
+      <stop offset="1" stop-color="#90274f"/>
+    </radialGradient>
+
+    <linearGradient id="thirdRosePetal" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffd0df"/>
+      <stop offset=".5" stop-color="#ed7fa6"/>
+      <stop offset="1" stop-color="#b73569"/>
+    </linearGradient>
+
+    <linearGradient id="thirdRoseLeaf" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#b4d094"/>
+      <stop offset=".55" stop-color="#70975f"/>
+      <stop offset="1" stop-color="#365e3c"/>
+    </linearGradient>
+
+    <radialGradient id="thirdRoseCenter" cx="35%" cy="25%">
+      <stop offset="0" stop-color="#f58bad"/>
+      <stop offset=".65" stop-color="#c43768"/>
+      <stop offset="1" stop-color="#79183e"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Stem -->
+  <path d="M50 148 C46 117 53 85 50 55"
+    fill="none" stroke="#527e50" stroke-width="4"
+    stroke-linecap="round"/>
+
+  <path d="M49 140 Q48 103 50 68"
+    fill="none" stroke="#a8c88d" stroke-width="1.2"
+    stroke-linecap="round"/>
+
+  <!-- Leaves -->
+  <path d="M49 120 C30 114 18 98 22 82
+    C39 88 49 103 49 120Z"
+    fill="url(#thirdRoseLeaf)"/>
+
+  <path d="M46 114 Q35 99 25 86"
+    fill="none" stroke="#d1e2b2" stroke-width="1.2"/>
+
+  <path d="M51 103 C65 82 80 78 83 64
+    C86 85 72 100 51 111Z"
+    fill="url(#thirdRoseLeaf)"/>
+
+  <path d="M55 102 Q69 85 80 69"
+    fill="none" stroke="#c5dda4" stroke-width="1.2"/>
+
+  <!-- Outer rose bloom -->
+  <path d="M49 61
+    C32 70 15 55 20 40
+    C11 27 27 15 40 27
+    C36 10 51 5 60 17
+    C75 8 88 23 78 39
+    C91 51 75 67 61 64Z"
+    fill="url(#thirdRoseBloom)"
+    stroke="#a53b65" stroke-width="1.2"
+    stroke-linejoin="round"/>
+
+  <!-- Left curled petal -->
+  <path d="M47 56
+    C29 61 21 46 29 34
+    C34 27 41 30 47 40
+    C42 26 50 20 57 25
+    C65 31 61 43 53 50Z"
+    fill="url(#thirdRosePetal)"
+    stroke="#bd4a75" stroke-width="1"/>
+
+  <!-- Right overlapping petal -->
+  <path d="M51 58
+    C66 62 79 49 72 37
+    C67 29 61 32 56 40
+    C63 25 56 20 49 24
+    C43 29 46 41 49 48Z"
+    fill="#e66b99"
+    stroke="#ae3564" stroke-width="1"/>
+
+  <!-- Inner petals -->
+  <path d="M40 49
+    C34 39 42 29 51 32
+    C61 34 63 45 54 51
+    C48 56 42 53 40 49Z"
+    fill="#f8a4bd"
+    stroke="#c34470" stroke-width="1"/>
+
+  <path d="M45 46
+    C40 39 48 32 54 37
+    C61 42 54 49 49 50
+    C55 47 59 52 54 56
+    C48 59 42 53 45 46Z"
+    fill="url(#thirdRoseCenter)"
+    stroke="#9b2854" stroke-width="1"/>
+
+  <!-- Natural petal folds -->
+  <path d="M27 38 Q29 29 36 30"
+    fill="none" stroke="#ffe8ef"
+    stroke-width="2.5" stroke-linecap="round"/>
+
+  <path d="M47 17 Q54 14 59 21"
+    fill="none" stroke="#ffe0e9"
+    stroke-width="2.2" stroke-linecap="round"/>
+
+  <path d="M69 32 Q75 37 71 44"
+    fill="none" stroke="#ffc5d7"
+    stroke-width="1.8" stroke-linecap="round"/>
+
+  <path d="M31 51 Q37 57 43 55"
+    fill="none" stroke="#ffbfd1"
+    stroke-width="1.5" stroke-linecap="round"/>
+</svg>
+
 
 </div>
 </summary>
