@@ -581,87 +581,138 @@
   </svg>
 
   
+
 <svg class="garden-flower lavender" viewBox="0 0 100 150" aria-hidden="true">
   <defs>
-    <linearGradient id="realLavenderStem" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" stop-color="#355b38"/>
-      <stop offset="50%" stop-color="#91b575"/>
-      <stop offset="100%" stop-color="#3b633b"/>
+    <linearGradient id="botanicalLavenderStem" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#365a37"/>
+      <stop offset="48%" stop-color="#88ad70"/>
+      <stop offset="100%" stop-color="#345735"/>
     </linearGradient>
 
-    <linearGradient id="realLavenderPetal" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#e8d7ff"/>
-      <stop offset="42%" stop-color="#b99be8"/>
-      <stop offset="78%" stop-color="#8862c3"/>
-      <stop offset="100%" stop-color="#5b3b8a"/>
+    <linearGradient id="botanicalLavenderLeaf" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#b2cc8d"/>
+      <stop offset="45%" stop-color="#789c60"/>
+      <stop offset="100%" stop-color="#3b603d"/>
     </linearGradient>
 
-    <linearGradient id="realLavenderLeaf" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#a5c786"/>
-      <stop offset="55%" stop-color="#628b56"/>
-      <stop offset="100%" stop-color="#365b3b"/>
+    <linearGradient id="botanicalLavenderPetal" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#e9ddff"/>
+      <stop offset="32%" stop-color="#c8b1f0"/>
+      <stop offset="68%" stop-color="#9674ce"/>
+      <stop offset="100%" stop-color="#67458e"/>
+    </linearGradient>
+
+    <linearGradient id="botanicalLavenderShadow" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#7954a8"/>
+      <stop offset="55%" stop-color="#b69ae4"/>
+      <stop offset="100%" stop-color="#68448e"/>
     </linearGradient>
   </defs>
 
-  <!-- Slender stem -->
-  <path d="M50 148 C47 112 52 76 51 24"
-        fill="none" stroke="url(#realLavenderStem)"
-        stroke-width="3.2" stroke-linecap="round"/>
+  <!-- Main stem -->
+  <path d="M50 148 C48 116 52 83 50 25"
+        fill="none" stroke="url(#botanicalLavenderStem)"
+        stroke-width="2.8" stroke-linecap="round"/>
 
-  <!-- Narrow leaves -->
-  <path d="M49 119 C35 110 30 99 32 88
-           C44 94 49 105 49 119Z"
-        fill="url(#realLavenderLeaf)"/>
-  <path d="M50 104 C62 93 67 82 65 73
-           C55 80 50 92 50 104Z"
-        fill="url(#realLavenderLeaf)"/>
-  <path d="M49 134 C38 128 35 120 36 113
-           C45 117 49 125 49 134Z"
-        fill="url(#realLavenderLeaf)"/>
+  <!-- Long, narrow leaves -->
+  <path d="M49 127 C37 120 31 109 33 97
+           C43 102 49 113 49 127Z"
+        fill="url(#botanicalLavenderLeaf)"/>
+  <path d="M49 126 Q42 113 35 102"
+        fill="none" stroke="#c7d9a3" stroke-width="0.8"/>
 
-  <!-- Lavender florets along the flower spike -->
-  <g stroke="#7652a6" stroke-width="0.6" stroke-linejoin="round">
-    <path d="M49 34 C39 31 37 24 42 20
-             C45 17 49 22 51 26
-             C53 19 59 17 62 22
-             C65 28 58 33 51 35Z"
-          fill="url(#realLavenderPetal)"/>
+  <path d="M50 111 C60 100 67 89 65 78
+           C56 85 51 97 50 111Z"
+        fill="url(#botanicalLavenderLeaf)"/>
+  <path d="M51 107 Q59 94 63 83"
+        fill="none" stroke="#c7d9a3" stroke-width="0.8"/>
 
-    <path d="M50 45 C38 44 34 37 39 32
-             C43 29 48 34 51 38
-             C54 31 61 30 64 36
-             C66 42 58 46 50 46Z"
-          fill="url(#realLavenderPetal)"/>
+  <path d="M49 140 C41 134 39 127 40 121
+           C46 126 49 132 49 140Z"
+        fill="url(#botanicalLavenderLeaf)"/>
 
-    <path d="M50 57 C37 57 32 50 37 45
-             C41 42 47 47 50 51
-             C54 44 61 43 64 49
-             C66 55 58 59 50 58Z"
-          fill="url(#realLavenderPetal)"/>
+  <!-- Tiny florets: narrow at the tip, fuller below -->
+  <g stroke="#7856a1" stroke-width="0.45" stroke-linejoin="round">
 
-    <path d="M50 69 C38 69 34 63 38 58
-             C42 55 47 60 50 63
-             C54 57 60 56 63 62
-             C65 67 58 71 50 70Z"
-          fill="url(#realLavenderPetal)"/>
+    <!-- Tip -->
+    <path d="M49 31 C44 28 44 23 47 21
+             C49 22 51 25 51 28
+             C53 23 57 23 58 26
+             C58 30 54 32 49 31Z"
+          fill="url(#botanicalLavenderPetal)"/>
 
-    <path d="M50 80 C40 81 36 75 40 70
-             C44 67 48 72 50 75
-             C54 69 60 69 62 74
-             C64 79 57 82 50 81Z"
-          fill="url(#realLavenderPetal)"/>
+    <path d="M48 39 C42 36 42 32 45 30
+             C48 30 50 34 50 36
+             C53 31 57 32 58 35
+             C58 39 53 41 48 39Z"
+          fill="url(#botanicalLavenderShadow)"/>
+
+    <!-- Upper florets -->
+    <path d="M49 47 C42 44 41 39 44 37
+             C47 37 50 41 50 44
+             C53 38 58 39 59 43
+             C59 47 54 49 49 47Z"
+          fill="url(#botanicalLavenderPetal)"/>
+
+    <path d="M48 55 C41 53 39 48 43 45
+             C46 45 49 49 50 52
+             C53 46 58 47 60 51
+             C60 55 54 57 48 55Z"
+          fill="url(#botanicalLavenderShadow)"/>
+
+    <!-- Middle florets -->
+    <path d="M48 63 C39 61 37 56 41 53
+             C45 53 48 57 50 60
+             C54 54 60 55 62 59
+             C62 63 55 66 48 63Z"
+          fill="url(#botanicalLavenderPetal)"/>
+
+    <path d="M49 71 C40 70 37 65 41 62
+             C45 62 49 66 50 68
+             C54 62 60 63 62 67
+             C62 71 56 73 49 71Z"
+          fill="url(#botanicalLavenderShadow)"/>
+
+    <!-- Fuller lower florets -->
+    <path d="M48 79 C39 78 35 73 39 69
+             C44 69 48 73 50 76
+             C54 70 61 71 63 75
+             C63 79 56 82 48 79Z"
+          fill="url(#botanicalLavenderPetal)"/>
+
+    <path d="M48 87 C39 86 35 81 39 77
+             C44 77 48 81 50 84
+             C55 78 62 79 64 83
+             C64 87 56 90 48 87Z"
+          fill="url(#botanicalLavenderShadow)"/>
+
   </g>
 
-  <!-- Fine petal highlights -->
-  <g fill="none" stroke="#f4eaff"
-     stroke-width="1.1" stroke-linecap="round" opacity="0.85">
-    <path d="M43 23 Q46 24 48 29"/>
-    <path d="M41 36 Q45 38 48 42"/>
-    <path d="M39 49 Q44 51 47 55"/>
-    <path d="M41 62 Q45 64 48 67"/>
-    <path d="M43 73 Q46 75 48 78"/>
+  <!-- Delicate highlights on individual blossoms -->
+  <g fill="none" stroke="#f1e7ff"
+     stroke-width="0.9" stroke-linecap="round" opacity="0.9">
+    <path d="M47 24 Q49 26 49 28"/>
+    <path d="M45 33 Q48 35 48 37"/>
+    <path d="M44 41 Q47 43 48 45"/>
+    <path d="M43 50 Q47 52 48 54"/>
+    <path d="M42 58 Q46 60 48 62"/>
+    <path d="M42 67 Q46 69 48 71"/>
+    <path d="M41 75 Q46 77 48 79"/>
+    <path d="M41 83 Q46 85 48 87"/>
+  </g>
+
+  <!-- Tiny side buds create a natural flower-spike silhouette -->
+  <g fill="url(#botanicalLavenderPetal)" stroke="#7856a1" stroke-width="0.4">
+    <ellipse cx="43" cy="35" rx="3" ry="4" transform="rotate(-30 43 35)"/>
+    <ellipse cx="57" cy="42" rx="3.2" ry="4" transform="rotate(30 57 42)"/>
+    <ellipse cx="42" cy="51" rx="3.5" ry="4.2" transform="rotate(-25 42 51)"/>
+    <ellipse cx="59" cy="59" rx="3.5" ry="4.2" transform="rotate(25 59 59)"/>
+    <ellipse cx="41" cy="68" rx="3.8" ry="4.2" transform="rotate(-25 41 68)"/>
+    <ellipse cx="60" cy="76" rx="3.8" ry="4.2" transform="rotate(25 60 76)"/>
   </g>
 </svg>
+
 
 
   <svg class="garden-flower daisy" viewBox="0 0 100 150" aria-hidden="true">
