@@ -251,7 +251,6 @@
         <p class="closing" id="finalPromise">
   <strong>Always yours Mine. 🌙❤️</strong>
 </p>
-      </article>
       
 </article>
 
@@ -1111,8 +1110,9 @@ button.addEventListener('click', () => {
     ? 'Keep this little moment close ❤️'
     : 'Open your little surprise 💌';
 
-  if (open) {
+ if (open) {
     startFloatingHearts();
+    watchFinalPromise();
 
     letter.scrollIntoView({
       behavior: matchMedia('(prefers-reduced-motion: reduce)').matches
