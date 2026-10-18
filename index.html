@@ -30,8 +30,35 @@
     .letter p{margin:0 0 15px}.letter .closing{text-align:center;color:#a7446b;font-size:1.17rem;margin:24px 0 0}
     .letter .emphasis{font-weight:bold;letter-spacing:.025em}
     @keyframes appear{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
-    .petal{position:fixed;top:-30px;z-index:5;pointer-events:none;font-size:18px;animation:fall linear forwards;opacity:.8}
-    @keyframes fall{to{transform:translate3d(var(--drift),110vh,0) rotate(460deg);opacity:.1}}
+    /* Floating hearts for Mamma ❤️ */
+.heart {
+  position: fixed;
+  bottom: -45px;
+  z-index: 5;
+  pointer-events: none;
+  font-size: 24px;
+  opacity: 0;
+  animation: floatUp linear forwards;
+  text-shadow: 0 0 10px #f7b6c866;
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translate3d(0, 0, 0) scale(0.7) rotate(-10deg);
+    opacity: 0;
+  }
+  12% {
+    opacity: 0.65;
+  }
+  80% {
+    opacity: 0.5;
+  }
+  100% {
+    transform: translate3d(var(--drift), -115vh, 0)
+               scale(1.2) rotate(25deg);
+    opacity: 0;
+  }
+}
     footer{font-family:Arial,sans-serif;font-size:.75rem;color:#b28a9b;margin-top:26px}
     @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition:none!important}}
   </style>
@@ -91,27 +118,83 @@
     </section>
   </main>
   <script>
-    const button = document.getElementById('reveal');
-    const letter = document.getElementById('letter');
-    let petalsStarted = false;
-    button.addEventListener('click', () => {
-      const open = letter.classList.toggle('show');
-      button.setAttribute('aria-expanded', String(open));
-      button.textContent = open ? 'Keep this little moment close ❤️' : 'Open your little surprise 💌';
-      if (open && !petalsStarted) { petalsStarted = true; makePetals(); }
-      if (open) letter.scrollIntoView({behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block:'nearest'});
+   
+const button = document.getElementById('reveal');
+const letter = document.getElementById('letter');
+
+let heartTimer = null;
+
+button.addEventListener('click', () => {
+  const open = letter.classList.toggle('show');
+
+  button.setAttribute('aria-expanded', String(open));
+
+  button.textContent = open
+    ? 'Keep this little moment close ❤️'
+    : 'Open your little surprise 💌';
+
+  if (open) {
+    startFloatingHearts();
+
+    letter.scrollIntoView({
+      behavior: matchMedia('(prefers-reduced-motion: reduce)').matches
+        ? 'auto'
+        : 'smooth',
+      block: 'nearest'
     });
-    function makePetals(){
-      if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-      const symbols = ['♡','✿','♥'];
-      for(let i=0;i<24;i++){
-        setTimeout(()=>{
-          const p=document.createElement('span'); p.className='petal'; p.textContent=symbols[Math.floor(Math.random()*symbols.length)];
-          p.style.left=Math.random()*100+'vw'; p.style.color=['#d85f86','#c2a5df','#e8a6bb'][Math.floor(Math.random()*3)];
-          p.style.setProperty('--drift',(Math.random()*160-80)+'px'); p.style.animationDuration=(5+Math.random()*5)+'s';
-          document.body.appendChild(p); p.addEventListener('animationend',()=>p.remove());
-        },i*160);
-      }
+  } else {
+    stopFloatingHearts();
+  }
+});
+
+function startFloatingHearts() {
+  if (heartTimer !== null) return;
+
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  const symbols = ['❤️', '💕', '♡', '💗', '♥', '💖'];
+  const colors = ['#d85f86', '#c2a5df', '#e8a6bb', '#f19ab5'];
+
+  function createHeart() {
+    const heart = document.createElement('span');
+
+    heart.className = 'heart';
+    heart.textContent =
+      symbols[Math.floor(Math.random() * symbols.length)];
+
+    heart.style.left = Math.random() * 96 + 'vw';
+    heart.style.color =
+      colors[Math.floor(Math.random() * colors.length)];
+
+    heart.style.setProperty(
+      '--drift',
+      (Math.random() * 160 - 80) + 'px'
+    );
+
+    heart.style.fontSize = (16 + Math.random() * 20) + 'px';
+    heart.style.animationDuration = (6 + Math.random() * 4) + 's';
+
+    document.body.appendChild(heart);
+
+    heart.addEventListener('animationend', () => heart.remove());
+  }
+
+  // Start with a little shower of hearts ❤️
+  for (let i = 0; i < 8; i++) {
+    setTimeout(createHeart, i * 180);
+  }
+
+  // Keep hearts floating while the message is open
+  heartTimer = setInterval(createHeart, 450);
+}
+
+function stopFloatingHearts() {
+  if (heartTimer !== null) {
+    clearInterval(heartTimer);
+    heartTimer = null;
+  }
+}
+
     }
   </script>
 </body>
