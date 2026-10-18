@@ -227,32 +227,141 @@
 
 <div class="flower-garden" aria-label="A little garden of flowers for Mamma">
 
-  <svg class="garden-flower lavender" viewBox="0 0 80 150" aria-hidden="true">
-    <defs>
-      <linearGradient id="stemGreen" x1="0" y1="0" x2="1" y2="0">
-        <stop offset="0" stop-color="#426b42"/>
-        <stop offset=".5" stop-color="#a2c48b"/>
-        <stop offset="1" stop-color="#426b42"/>
-      </linearGradient>
-      <radialGradient id="lavenderShade" cx="30%" cy="25%">
-        <stop offset="0" stop-color="#eadfff"/>
-        <stop offset=".55" stop-color="#b99ae8"/>
-        <stop offset="1" stop-color="#76549e"/>
-      </radialGradient>
-    </defs>
-    <path d="M42 148 Q29 90 41 25" fill="none" stroke="url(#stemGreen)" stroke-width="4" stroke-linecap="round"/>
-    <path d="M38 112 Q8 108 12 88 Q33 91 38 112Z" fill="#82ad78"/>
-    <path d="M38 92 Q67 84 65 66 Q44 72 38 92Z" fill="#608d5c"/>
-    <g fill="url(#lavenderShade)" stroke="#9273b9" stroke-width="1">
-      <ellipse cx="34" cy="30" rx="8" ry="12" transform="rotate(-25 34 30)"/>
-      <ellipse cx="46" cy="35" rx="8" ry="12" transform="rotate(25 46 35)"/>
-      <ellipse cx="33" cy="45" rx="8" ry="12" transform="rotate(-25 33 45)"/>
-      <ellipse cx="46" cy="49" rx="8" ry="12" transform="rotate(25 46 49)"/>
-      <ellipse cx="34" cy="61" rx="8" ry="11" transform="rotate(-25 34 61)"/>
-      <ellipse cx="44" cy="65" rx="8" ry="11" transform="rotate(25 44 65)"/>
-      <ellipse cx="40" cy="21" rx="7" ry="11"/>
-    </g>
-  </svg>
+ 
+<svg class="garden-flower rose" viewBox="0 0 100 150" aria-hidden="true">
+  <defs>
+    <radialGradient id="realRosePetal" cx="32%" cy="22%" r="78%">
+      <stop offset="0%" stop-color="#ffd1d9"/>
+      <stop offset="30%" stop-color="#f58ba5"/>
+      <stop offset="68%" stop-color="#d83c68"/>
+      <stop offset="100%" stop-color="#781735"/>
+    </radialGradient>
+
+    <linearGradient id="realRoseFold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ffccd7"/>
+      <stop offset="38%" stop-color="#f16a8b"/>
+      <stop offset="100%" stop-color="#a51f48"/>
+    </linearGradient>
+
+    <radialGradient id="realRoseHeart" cx="35%" cy="25%">
+      <stop offset="0%" stop-color="#f77b9b"/>
+      <stop offset="55%" stop-color="#b91e4b"/>
+      <stop offset="100%" stop-color="#571027"/>
+    </radialGradient>
+
+    <linearGradient id="realRoseStem" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#315a37"/>
+      <stop offset="45%" stop-color="#82ad69"/>
+      <stop offset="100%" stop-color="#365d36"/>
+    </linearGradient>
+
+    <linearGradient id="realRoseLeaf" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#a9cc83"/>
+      <stop offset="48%" stop-color="#55834c"/>
+      <stop offset="100%" stop-color="#284e32"/>
+    </linearGradient>
+
+    <filter id="realRoseShadow" x="-35%" y="-30%" width="170%" height="175%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="1.5"/>
+      <feOffset dx="1.5" dy="2.5"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.28"/>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Stem -->
+  <path d="M50 147 C47 117 53 87 49 53"
+        fill="none" stroke="url(#realRoseStem)"
+        stroke-width="4" stroke-linecap="round"/>
+
+  <!-- Leaves -->
+  <path d="M49 116 C30 111 19 97 21 83
+           C39 87 49 99 49 116Z"
+        fill="url(#realRoseLeaf)"/>
+  <path d="M36 103 Q29 95 24 88"
+        fill="none" stroke="#c3d99a" stroke-width="1"/>
+
+  <path d="M50 98 C65 76 79 76 83 66
+           C85 84 72 100 50 108Z"
+        fill="url(#realRoseLeaf)"/>
+  <path d="M54 101 Q68 87 80 70"
+        fill="none" stroke="#b5d18c" stroke-width="1"/>
+
+  <!-- Back petals -->
+  <g filter="url(#realRoseShadow)"
+     stroke="#a62a4b" stroke-width="0.8"
+     stroke-linejoin="round">
+
+    <path d="M30 48 C14 42 13 25 25 17
+             C31 12 39 18 43 26
+             C39 15 48 5 58 10
+             C73 9 82 23 75 37
+             C88 43 82 59 68 63
+             C52 70 35 62 30 48Z"
+          fill="url(#realRosePetal)"/>
+
+    <!-- Outer curved petals -->
+    <path d="M49 47 C31 61 17 50 22 36
+             C24 29 31 27 39 31
+             C29 18 40 10 49 19
+             C57 25 55 36 49 47Z"
+          fill="url(#realRoseFold)"/>
+
+    <path d="M49 43 C51 23 67 18 75 29
+             C81 39 69 50 57 53
+             C68 53 75 63 66 69
+             C54 73 43 60 49 43Z"
+          fill="url(#realRosePetal)"/>
+
+    <path d="M42 46 C30 38 32 24 42 22
+             C52 19 60 29 57 40
+             C55 48 48 53 42 46Z"
+          fill="#f9a0b4"/>
+
+    <!-- Folded petals -->
+    <path d="M43 48 C30 43 33 31 42 29
+             C49 27 56 35 53 43
+             C50 49 44 53 43 48Z"
+          fill="url(#realRoseFold)"/>
+
+    <path d="M50 45 C48 33 61 28 66 37
+             C70 44 62 51 55 53
+             C60 44 57 40 50 45Z"
+          fill="#bd2853"/>
+
+    <!-- Deep inner cup -->
+    <path d="M44 44 C39 35 49 27 57 33
+             C65 38 61 48 53 52
+             C46 54 40 49 44 44Z"
+          fill="url(#realRoseHeart)"/>
+
+    <!-- Curling central petal -->
+    <path d="M48 44 C43 39 47 33 52 35
+             C59 37 56 44 51 46
+             C56 43 60 47 55 51
+             C49 54 44 49 48 44Z"
+          fill="#7c1635" stroke="#f27b99" stroke-width="1"/>
+
+    <!-- Soft rim highlights -->
+    <path d="M26 32 C25 25 30 20 35 22"
+          fill="none" stroke="#ffdce3"
+          stroke-width="2.2" stroke-linecap="round"/>
+
+    <path d="M63 17 C70 19 73 25 71 30"
+          fill="none" stroke="#ffc1d0"
+          stroke-width="1.8" stroke-linecap="round"/>
+
+    <path d="M28 49 Q35 57 42 56"
+          fill="none" stroke="#ffb3c6"
+          stroke-width="1.5" stroke-linecap="round"/>
+  </g>
+</svg>
+
 
   <svg class="garden-flower daisy" viewBox="0 0 100 150" aria-hidden="true">
     <defs>
