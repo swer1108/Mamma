@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#fff1f5">
+  <title>For My Mamma ❤️</title>
+  <style>
+    :root{--pink:#f7b6c8;--rose:#d85f86;--ink:#553848;--cream:#fffaf7;--lav:#d9c9f2;--green:#7f9c78}
+    *{box-sizing:border-box}
+    body{margin:0;min-height:100vh;color:var(--ink);font-family:Georgia,'Times New Roman',serif;background:radial-gradient(circle at 15% 15%,#fff 0 2px,transparent 3px),radial-gradient(circle at 85% 28%,#fff 0 2px,transparent 3px),linear-gradient(160deg,#fff7f8,#f8efff 55%,#fff4e9);overflow-x:hidden}
+    .sky{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:0}
+    .star{position:absolute;color:#d6a5bb;animation:twinkle 3s ease-in-out infinite alternate}
+    .star:nth-child(1){top:8%;left:13%;font-size:18px}.star:nth-child(2){top:17%;right:15%;font-size:13px;animation-delay:.8s}.star:nth-child(3){top:70%;left:7%;font-size:15px;animation-delay:1.2s}.star:nth-child(4){top:78%;right:10%;font-size:20px;animation-delay:.4s}.star:nth-child(5){top:43%;right:6%;font-size:12px;animation-delay:1.7s}
+    @keyframes twinkle{from{opacity:.35;transform:scale(.8)}to{opacity:1;transform:scale(1.2)}}
+    main{position:relative;z-index:1;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:30px 16px}
+    .card{width:min(720px,100%);background:rgba(255,250,247,.86);border:1px solid rgba(216,95,134,.23);border-radius:28px;box-shadow:0 20px 60px #8c54751a;padding:clamp(22px,5vw,46px);text-align:center;position:relative;overflow:hidden}
+    .moon{position:absolute;right:27px;top:22px;width:46px;height:46px;border-radius:50%;background:#f8dfa0;box-shadow:0 0 0 8px #f8dfa022,0 0 28px #f8dfa077}
+    .moon:after{content:'';position:absolute;left:12px;top:-4px;width:42px;height:42px;border-radius:50%;background:#fffaf7}
+    .eyebrow{font-family:Arial,sans-serif;letter-spacing:.22em;text-transform:uppercase;font-size:.72rem;color:#b66b87;margin:4px 0 8px}
+    h1{font-weight:normal;font-size:clamp(2.1rem,7vw,3.6rem);margin:0;color:#a7446b;line-height:1.12}
+    .subtitle{font-size:1.05rem;color:#8b6878;margin:12px 0 8px}
+    .art{width:min(310px,82%);margin:10px auto 6px;display:block;filter:drop-shadow(0 8px 7px #7b4a5012)}
+    .hint{font-family:Arial,sans-serif;font-size:.9rem;color:#997b89;margin:6px 0 20px}
+    button{appearance:none;border:0;border-radius:999px;padding:14px 24px;background:linear-gradient(135deg,#d85f86,#b34c78);color:white;font-size:1rem;letter-spacing:.02em;box-shadow:0 8px 20px #d85f863d;cursor:pointer;transition:transform .2s,box-shadow .2s}
+    button:hover{transform:translateY(-2px);box-shadow:0 12px 24px #d85f864c}button:focus-visible{outline:3px solid #553848;outline-offset:4px}
+    .letter{display:none;text-align:left;margin:28px auto 0;max-width:560px;padding:clamp(20px,4vw,32px);border-radius:20px;background:#fffdfb;border:1px dashed #e6a7bd;animation:appear .8s ease both;line-height:1.8;font-size:1.07rem}
+    .letter.show{display:block}
+    .letter h2{text-align:center;font-weight:normal;color:#a7446b;font-size:1.8rem;margin:0 0 18px}
+    .letter p{margin:0 0 15px}.letter .closing{text-align:center;color:#a7446b;font-size:1.17rem;margin:24px 0 0}
+    .letter .emphasis{font-weight:bold;letter-spacing:.025em}
+    @keyframes appear{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+    .petal{position:fixed;top:-30px;z-index:5;pointer-events:none;font-size:18px;animation:fall linear forwards;opacity:.8}
+    @keyframes fall{to{transform:translate3d(var(--drift),110vh,0) rotate(460deg);opacity:.1}}
+    footer{font-family:Arial,sans-serif;font-size:.75rem;color:#b28a9b;margin-top:26px}
+    @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition:none!important}}
+  </style>
+</head>
+<body>
+  <div class="sky" aria-hidden="true"><span class="star">✦</span><span class="star">✧</span><span class="star">✦</span><span class="star">✧</span><span class="star">✦</span></div>
+  <main>
+    <section class="card" aria-labelledby="title">
+      <div class="moon" aria-hidden="true"></div>
+      <p class="eyebrow">a little something from my heart</p>
+      <h1 id="title">For My Mamma ❤️</h1>
+      <p class="subtitle">A little bouquet, a little moonlight, and all my love.</p>
+      <svg class="art" viewBox="0 0 320 290" role="img" aria-label="A hand-drawn style bouquet of pink, lavender and cream flowers tied with a ribbon">
+        <defs>
+          <filter id="soft"><feGaussianBlur stdDeviation=".35"/></filter>
+        </defs>
+        <!-- stems -->
+        <g fill="none" stroke="#779572" stroke-width="4" stroke-linecap="round">
+          <path d="M158 240 Q137 185 98 107"/><path d="M161 240 Q174 177 217 100"/><path d="M160 240 Q155 171 157 85"/><path d="M156 236 Q116 194 75 153"/><path d="M164 238 Q202 194 247 149"/>
+        </g>
+        <!-- leaves -->
+        <g fill="#91b08b" stroke="#6e9270" stroke-width="1.5">
+          <path d="M124 190 Q83 183 91 153 Q118 159 124 190Z"/><path d="M185 194 Q224 187 222 157 Q195 161 185 194Z"/><path d="M137 161 Q105 149 111 126 Q133 133 137 161Z"/><path d="M190 158 Q222 141 214 120 Q191 132 190 158Z"/><path d="M153 205 Q124 202 120 181 Q144 183 153 205Z"/>
+        </g>
+        <!-- flowers -->
+        <g stroke-linejoin="round" stroke-width="2">
+          <g transform="translate(98 94)" stroke="#d889a7" fill="#f6c1d1"><ellipse cy="-17" rx="10" ry="16"/><ellipse cy="17" rx="10" ry="16"/><ellipse cx="-17" rx="16" ry="10"/><ellipse cx="17" rx="16" ry="10"/><ellipse cx="-12" cy="-12" rx="10" ry="15" transform="rotate(-45 -12 -12)"/><ellipse cx="12" cy="-12" rx="10" ry="15" transform="rotate(45 12 -12)"/><circle r="10" fill="#f5d985" stroke="#d6a65e"/></g>
+          <g transform="translate(217 88)" stroke="#a99ad1" fill="#d9c9f2"><ellipse cy="-16" rx="10" ry="15"/><ellipse cy="16" rx="10" ry="15"/><ellipse cx="-16" rx="15" ry="10"/><ellipse cx="16" rx="15" ry="10"/><ellipse cx="-11" cy="-11" rx="9" ry="14" transform="rotate(-45 -11 -11)"/><ellipse cx="11" cy="-11" rx="9" ry="14" transform="rotate(45 11 -11)"/><circle r="9" fill="#f3d98c" stroke="#c8a95e"/></g>
+          <g transform="translate(157 72)" stroke="#d889a7" fill="#f8d7df"><ellipse cy="-17" rx="10" ry="16"/><ellipse cy="17" rx="10" ry="16"/><ellipse cx="-17" rx="16" ry="10"/><ellipse cx="17" rx="16" ry="10"/><ellipse cx="-12" cy="-12" rx="10" ry="15" transform="rotate(-45 -12 -12)"/><ellipse cx="12" cy="-12" rx="10" ry="15" transform="rotate(45 12 -12)"/><circle r="9" fill="#f5d985" stroke="#d6a65e"/></g>
+          <g transform="translate(76 145)" stroke="#b69acb" fill="#e6d7f4"><ellipse cy="-12" rx="7" ry="12"/><ellipse cy="12" rx="7" ry="12"/><ellipse cx="-12" rx="12" ry="7"/><ellipse cx="12" rx="12" ry="7"/><circle r="7" fill="#f5d985"/></g>
+          <g transform="translate(246 140)" stroke="#d889a7" fill="#f4b9cd"><ellipse cy="-12" rx="7" ry="12"/><ellipse cy="12" rx="7" ry="12"/><ellipse cx="-12" rx="12" ry="7"/><ellipse cx="12" rx="12" ry="7"/><circle r="7" fill="#f5d985"/></g>
+        </g>
+        <!-- wrapping paper -->
+        <path d="M75 151 Q155 177 246 145 L199 239 Q162 261 125 237Z" fill="#fff0dc" stroke="#d9b6a4" stroke-width="2.5"/>
+        <path d="M75 151 Q151 193 246 145 L228 181 Q157 216 93 177Z" fill="#f8e3e4" stroke="#e0b9bd" stroke-width="2"/>
+        <path d="M125 236 Q160 220 199 239 L190 254 Q159 239 136 254Z" fill="#edc8d7" stroke="#d9a5bc" stroke-width="2"/>
+        <!-- ribbon -->
+        <path d="M156 225 C120 203 112 235 143 241 C151 242 157 236 160 231 C173 254 204 239 187 222 C178 213 166 221 160 230Z" fill="#d85f86" stroke="#a7446b" stroke-width="2.5"/>
+        <path d="M158 231 Q137 258 131 270 Q152 267 165 236Z" fill="#e88cab" stroke="#a7446b" stroke-width="2"/>
+        <path d="M164 232 Q185 258 199 264 Q194 243 168 227Z" fill="#e88cab" stroke="#a7446b" stroke-width="2"/>
+        <circle cx="161" cy="230" r="5" fill="#f8d7df"/>
+        <!-- tiny hand-drawn sparkles -->
+        <g fill="#d7a4b8"><path d="M48 94 l3 8 8 3-8 3-3 8-3-8-8-3 8-3Z"/><path d="M267 57 l2 6 6 2-6 2-2 6-2-6-6-2 6-2Z"/><circle cx="57" cy="202" r="3"/><circle cx="270" cy="197" r="2.5"/></g>
+      </svg>
+      <p class="hint">There's a little message waiting for you…</p>
+      <button id="reveal" type="button" aria-expanded="false" aria-controls="letter">Open your little surprise 💌</button>
+      <article class="letter" id="letter" aria-live="polite">
+        <h2>For My Mamma ❤️</h2>
+        <p>There will be good days and there will be bad days but the most important thing is <span class="emphasis">CHOOSING UNDERSTANDING and TRUSTING each other</span>.</p>
+        <p>Sometimes we make mistakes, but out of those mistakes comes the most beautiful thing.</p>
+        <p>And We laugh until we had to cry, we <span class="emphasis">SMILE till our last breath.</span></p>
+        <p>Thank you for Loving me and thank you for being my Peace and my Home Mamma ❤️</p>
+        <p class="emphasis">loving YOU is the best thing that ever happened to me</p>
+        <p class="closing"><strong>Always yours Mine. 🌙❤️</strong></p>
+      </article>
+      <footer>made with a little code and a whole lot of love ✨</footer>
+    </section>
+  </main>
+  <script>
+    const button = document.getElementById('reveal');
+    const letter = document.getElementById('letter');
+    let petalsStarted = false;
+    button.addEventListener('click', () => {
+      const open = letter.classList.toggle('show');
+      button.setAttribute('aria-expanded', String(open));
+      button.textContent = open ? 'Keep this little moment close ❤️' : 'Open your little surprise 💌';
+      if (open && !petalsStarted) { petalsStarted = true; makePetals(); }
+      if (open) letter.scrollIntoView({behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block:'nearest'});
+    });
+    function makePetals(){
+      if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      const symbols = ['♡','✿','♥'];
+      for(let i=0;i<24;i++){
+        setTimeout(()=>{
+          const p=document.createElement('span'); p.className='petal'; p.textContent=symbols[Math.floor(Math.random()*symbols.length)];
+          p.style.left=Math.random()*100+'vw'; p.style.color=['#d85f86','#c2a5df','#e8a6bb'][Math.floor(Math.random()*3)];
+          p.style.setProperty('--drift',(Math.random()*160-80)+'px'); p.style.animationDuration=(5+Math.random()*5)+'s';
+          document.body.appendChild(p); p.addEventListener('animationend',()=>p.remove());
+        },i*160);
+      }
+    }
+  </script>
+</body>
+</html>
