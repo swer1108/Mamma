@@ -26,6 +26,63 @@
     button:hover{transform:translateY(-2px);box-shadow:0 12px 24px #d85f864c}button:focus-visible{outline:3px solid #553848;outline-offset:4px}
     .letter{display:none;text-align:left;margin:28px auto 0;max-width:560px;padding:clamp(20px,4vw,32px);border-radius:20px;background:#fffdfb;border:1px dashed #e6a7bd;animation:appear .8s ease both;line-height:1.8;font-size:1.07rem}
     .letter.show{display:block}
+    
+/* Floral frame for Mamma's love letter 🌷 */
+.letter {
+  position: relative;
+  border: 1px solid #dfa2b8;
+  border-radius: 20px;
+  box-shadow:
+    inset 0 0 0 5px #fffdfb,
+    inset 0 0 0 6px #f0d3df,
+    0 8px 24px #d85f8612;
+}
+
+/* Delicate inner frame */
+.letter::before {
+  content: "";
+  position: absolute;
+  inset: 10px;
+  border: 1px solid #e8c5d3;
+  border-radius: 13px;
+  pointer-events: none;
+}
+
+/* Keep the letter content above the decorative frame */
+.letter > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Floral garlands */
+.letter-floral {
+  color: #78966d;
+  text-align: center;
+  font-size: clamp(0.8rem, 3vw, 1.15rem);
+  letter-spacing: 0.05em;
+  line-height: 1.8;
+  margin: 0 0 18px;
+  overflow-wrap: anywhere;
+}
+
+/* The single anchor at the top */
+.letter-anchor {
+  text-align: center;
+  color: #a7446b;
+  font-size: 2rem;
+  line-height: 1.2;
+  margin: 0 0 10px;
+}
+
+/* Two anchors and a heart at the end */
+.anchor-promise {
+  text-align: center;
+  font-size: 1.8rem;
+  letter-spacing: 0.08em;
+  margin: 12px 0 8px;
+  color: #a7446b;
+}
+
     .letter h2{text-align:center;font-weight:normal;color:#a7446b;font-size:1.8rem;margin:0 0 18px}
     .letter p{margin:0 0 15px}.letter .closing{text-align:center;color:#a7446b;font-size:1.17rem;margin:24px 0 0}
     .letter .emphasis{font-weight:bold;letter-spacing:.025em}
@@ -241,16 +298,35 @@
       </svg>
       <p class="hint">There's a little message waiting for you…</p>
       <button id="reveal" type="button" aria-expanded="false" aria-controls="letter">Open your little surprise 💌</button>
-      <article class="letter" id="letter" aria-live="polite">
-        <h2>For My Mamma ❤️</h2>
+      
+<article class="letter" id="letter" aria-live="polite">
+
+  <div class="letter-anchor" aria-hidden="true">⚓</div>
+
+  <div class="letter-floral" aria-hidden="true">
+    🌿 ❀ 🌸 🌿 🌷 🌿 🌸 ❀ 🌿
+  </div>
+
+  <h2>For My Mamma ❤️</h2>
+
         <p>There will be good days and there will be bad days but the most important thing is <span class="emphasis">CHOOSING UNDERSTANDING and TRUSTING each other</span>.</p>
         <p>Sometimes we make mistakes, but out of those mistakes comes the most beautiful thing.</p>
         <p>And We laugh until we had to cry, we <span class="emphasis">SMILE till our last breath.</span></p>
         <p>Thank you for Loving me and thank you for being my Peace and my Home Mamma ❤️</p>
         <p class="emphasis">loving YOU is the best thing that ever happened to me</p>
-        <p class="closing" id="finalPromise">
+       
+<p class="closing" id="finalPromise">
   <strong>Always yours Mine. 🌙❤️</strong>
 </p>
+
+<div class="anchor-promise" aria-label="Two anchors with a heart between them">
+  ⚓ ❤️ ⚓
+</div>
+
+<div class="letter-floral" aria-hidden="true">
+  🌿 ❀ 🌸 🌿 🌷 🌿 🌸 ❀ 🌿
+</div>
+
       
 </article>
 
@@ -1090,7 +1166,6 @@
 
 
 </div>
-</summary>
       
     </section>
   </main>
