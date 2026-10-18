@@ -1101,6 +1101,7 @@ const letter = document.getElementById('letter');
 
 let heartTimer = null;
 
+
 button.addEventListener('click', () => {
   const open = letter.classList.toggle('show');
 
@@ -1110,11 +1111,9 @@ button.addEventListener('click', () => {
     ? 'Keep this little moment close ❤️'
     : 'Open your little surprise 💌';
 
-if (open) {
-  startFloatingHearts();
-  watchFinalPromise();
-
-  letter.scrollIntoView({
+  if (open) {
+    startFloatingHearts();
+    watchFinalPromise();
 
     letter.scrollIntoView({
       behavior: matchMedia('(prefers-reduced-motion: reduce)').matches
@@ -1126,6 +1125,7 @@ if (open) {
     stopFloatingHearts();
   }
 });
+
 
 function startFloatingHearts() {
   if (heartTimer !== null) return;
