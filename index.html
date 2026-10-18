@@ -1173,28 +1173,35 @@ function stopFloatingHearts() {
   }
 }
     
+
 const finalPromise = document.getElementById('finalPromise');
 const letterSection = document.getElementById('letter');
 
-function checkFinalPromise() {
+let promiseObserver = null;
+
+function watchFinalPromise() {
   if (!finalPromise || !letterSection) return;
 
-  const letterIsOpen = letterSection.offsetParent !== null;
-  const position = finalPromise.getBoundingClientRect();
-
-  if (
-    letterIsOpen &&
-    position.top < window.innerHeight * 0.85 &&
-    position.bottom > 0
-  ) {
-    finalPromise.classList.add('show-promise');
-    window.removeEventListener('scroll', checkFinalPromise);
+  // Remove the old observer if the letter is reopened.
+  if (promiseObserver) {
+    promiseObserver.disconnect();
   }
+
+  promiseObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        finalPromise.classList.add('show-promise');
+        promiseObserver.disconnect();
+        promiseObserver = null;
+      }
+    });
+  }, {
+    threshold: 0.5
+  });
+
+  promiseObserver.observe(finalPromise);
 }
 
-window.addEventListener('scroll', checkFinalPromise, {
-  passive: true
-});
 
   </script>
 </body>
