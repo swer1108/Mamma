@@ -1110,9 +1110,11 @@ button.addEventListener('click', () => {
     ? 'Keep this little moment close ❤️'
     : 'Open your little surprise 💌';
 
- if (open) {
-    startFloatingHearts();
-    watchFinalPromise();
+if (open) {
+  startFloatingHearts();
+  watchFinalPromise();
+
+  letter.scrollIntoView({
 
     letter.scrollIntoView({
       behavior: matchMedia('(prefers-reduced-motion: reduce)').matches
@@ -1174,6 +1176,8 @@ function stopFloatingHearts() {
 }
     
 
+
+
 const finalPromise = document.getElementById('finalPromise');
 const letterSection = document.getElementById('letter');
 
@@ -1182,7 +1186,6 @@ let promiseObserver = null;
 function watchFinalPromise() {
   if (!finalPromise || !letterSection) return;
 
-  // Remove the old observer if the letter is reopened.
   if (promiseObserver) {
     promiseObserver.disconnect();
   }
