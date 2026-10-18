@@ -63,215 +63,107 @@
 /* A little garden for Mamma 💐 */
 
 /* Mamma's dreamy 3D flower garden 💐 */
+
+/* Mamma's flower garden 💐 */
 .flower-garden {
   display: flex;
   align-items: flex-end;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 0 3px;
+  gap: 0 2px;
+  position: relative;
+  isolation: isolate;
   margin: 26px -10px 0;
-  padding: 22px 4px 5px;
-  perspective: 800px;
+  padding: 28px 5px 8px;
+  perspective: 900px;
   border-top: 1px solid #ead5e4;
   border-radius: 45% 45% 0 0 / 12% 12% 0 0;
   background:
-    radial-gradient(ellipse at 50% 100%, #b7d1a766, transparent 70%),
-    linear-gradient(to top, #e4efdbaa, #f8edf566 55%, transparent);
+    radial-gradient(ellipse at 50% 100%, #9dbd8c88, transparent 70%),
+    linear-gradient(to top, #dcebd5, #f8edf5 65%, transparent);
 }
 
-.flower-garden svg {
-  width: clamp(34px, 8vw, 58px);
-  height: clamp(76px, 17vw, 108px);
+/* Individual flowers */
+.flower-garden .garden-flower {
+  display: block;
+  position: relative;
+  width: clamp(42px, 9vw, 68px);
+  height: clamp(90px, 19vw, 130px);
   flex: 0 0 auto;
   overflow: visible;
   transform-origin: 50% 100%;
   transform-style: preserve-3d;
-  filter: drop-shadow(2px 5px 3px #55415b35);
-  animation: flowerSway 4s ease-in-out infinite;
+  backface-visibility: visible;
+  filter:
+    drop-shadow(2px 4px 2px #4d354333)
+    drop-shadow(-1px -1px 1px #ffffff66);
+  animation: gardenSway 4.5s ease-in-out infinite;
   transition: filter 0.4s ease;
 }
 
-/* Different heights make the garden feel natural */
-.flower-garden svg:nth-child(3n) {
-  height: clamp(68px, 14vw, 92px);
-  animation-delay: -1.4s;
+/* Vary the height and movement */
+.flower-garden .garden-flower:nth-child(3n) {
+  height: clamp(76px, 16vw, 110px);
+  animation-delay: -1.3s;
 }
 
-.flower-garden svg:nth-child(3n + 1) {
-  animation-delay: -2.6s;
+.flower-garden .garden-flower:nth-child(3n + 1) {
+  animation-delay: -2.4s;
 }
 
-/* Rich green stems and leaves */
-.flower-garden .stem {
-  fill: none;
-  stroke: #527a4c;
-  stroke-width: 2.8;
-  stroke-linecap: round;
-  filter: drop-shadow(1px 1px 1px #31502c55);
+.flower-garden .garden-flower:nth-child(3n + 2) {
+  animation-delay: -0.6s;
 }
 
-.flower-garden .leaf {
-  fill: url(#leafGradient);
-  stroke: #52754b;
-  stroke-width: 1;
+/* Give the petals more dimensional shading */
+.flower-garden .garden-flower path,
+.flower-garden .garden-flower ellipse {
+  transition: filter 0.35s ease;
 }
 
-/* Layered lavender petals */
-.flower-garden .lavender-petal {
-  fill: url(#lavenderGradient);
-  stroke: #8b70b7;
-  stroke-width: 0.8;
-  filter: drop-shadow(1px 2px 1px #674a9150);
+.flower-garden .garden-flower.rose {
+  filter:
+    drop-shadow(2px 5px 3px #6b183c55)
+    drop-shadow(-1px -1px 2px #ffc2d055);
 }
 
-/* Soft, dimensional daisy petals */
-.flower-garden .white-petal {
-  fill: url(#daisyGradient);
-  stroke: #d7c5d2;
-  stroke-width: 0.8;
-  filter: drop-shadow(1px 2px 1px #7b607133);
+.flower-garden .garden-flower.daisy {
+  filter:
+    drop-shadow(2px 5px 3px #67505a44)
+    drop-shadow(-1px -1px 2px #ffffff99);
 }
 
-.flower-garden .center {
-  fill: url(#goldGradient);
-  stroke: #bd8e3c;
-  stroke-width: 0.8;
-  filter: drop-shadow(1px 2px 2px #936d3255);
+.flower-garden .garden-flower.lavender {
+  filter:
+    drop-shadow(2px 4px 3px #654c8055)
+    drop-shadow(-1px -1px 2px #e8d9ff88);
 }
 
-/* Deep, velvety red rose petals */
-.flower-garden .rose-petal {
-  fill: url(#roseGradient);
-  stroke: #86253e;
-  stroke-width: 0.9;
-  filter: drop-shadow(1px 2px 2px #78203966);
+.flower-garden .garden-flower.tulip {
+  filter:
+    drop-shadow(2px 5px 3px #7b345955)
+    drop-shadow(-1px -1px 2px #ffe1eb99);
 }
 
-.flower-garden .rose-light {
-  fill: url(#roseLightGradient);
-  stroke: #b63c59;
-  stroke-width: 0.8;
-}
-
-/* Gentle 3D-inspired movement */
-@keyframes flowerSway {
+/* A gentle breeze */
+@keyframes gardenSway {
   0%, 100% {
-    transform: rotate(-3deg) rotateY(-8deg);
+    transform: rotate(-3deg) rotateY(-9deg) translateY(0);
   }
+
   50% {
-    transform: rotate(3deg) rotateY(8deg);
+    transform: rotate(3deg) rotateY(9deg) translateY(-3px);
   }
 }
 
-/* Respect reduced-motion settings */
+/* Keep the flowers still if reduced motion is preferred */
 @media (prefers-reduced-motion: reduce) {
-  .flower-garden svg {
+  .flower-garden .garden-flower {
     animation: none;
+    transition: none;
   }
 }
 
-
-.flower-garden span {
-  display: inline-block;
-  font-size: clamp(1.5rem, 4vw, 2.3rem);
-  transform-origin: bottom center;
-  animation: flowerSway 3s ease-in-out infinite;
-  filter: drop-shadow(0 3px 3px #a8759522);
-}
-
-.flower-garden span:nth-child(3n) {
-  animation-delay: -1s;
-}
-
-.flower-garden span:nth-child(3n + 1) {
-  animation-delay: -2s;
-}
-
-@keyframes flowerSway {
-  
-/* Mamma's little botanical garden 💐 */
-.flower-garden {
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 0 3px;
-  margin: 26px -10px 0;
-  padding: 18px 4px 0;
-  border-top: 1px solid #ead5e4;
-  border-radius: 45% 45% 0 0 / 12% 12% 0 0;
-  background: linear-gradient(
-    to top,
-    #e4efdbaa,
-    #f8edf566 55%,
-    transparent
-  );
-}
-
-.flower-garden svg {
-  width: clamp(34px, 8vw, 58px);
-  height: clamp(76px, 17vw, 108px);
-  flex: 0 0 auto;
-  overflow: visible;
-  transform-origin: 50% 100%;
-  animation: flowerSway 4s ease-in-out infinite;
-}
-
-.flower-garden svg:nth-child(3n) {
-  animation-delay: -1.4s;
-}
-
-.flower-garden svg:nth-child(3n + 1) {
-  animation-delay: -2.6s;
-}
-
-.flower-garden .stem {
-  fill: none;
-  stroke: #64865d;
-  stroke-width: 2.6;
-  stroke-linecap: round;
-}
-
-.flower-garden .leaf {
-  fill: #83a77a;
-  stroke: #64865d;
-  stroke-width: 1;
-}
-
-.flower-garden .lavender-petal {
-  fill: #b8a0df;
-  stroke: #8e75bb;
-  stroke-width: .65;
-}
-
-.flower-garden .white-petal {
-  fill: #fffdf8;
-  stroke: #d9cbd2;
-  stroke-width: .7;
-}
-
-.flower-garden .rose-petal {
-  fill: #c94363;
-  stroke: #96334d;
-  stroke-width: .8;
-}
-
-.flower-garden .rose-light {
-  fill: #e87891;
-  stroke: #b63c59;
-  stroke-width: .8;
-}
-
-.flower-garden .center {
-  fill: #eac66f;
-  stroke: #c99d4b;
-  stroke-width: .8;
-}
-
-@keyframes flowerSway {
-  0%, 100% { transform: rotate(-3deg); }
-  50% { transform: rotate(3deg); }
-}
 
     footer{font-family:Arial,sans-serif;font-size:.75rem;color:#b28a9b;margin-top:26px}
     @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition:none!important}}
