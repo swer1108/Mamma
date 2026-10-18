@@ -59,6 +59,45 @@
     opacity: 0;
   }
 }
+    
+/* A little garden for Mamma 💐 */
+.flower-garden {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 5px 10px;
+  margin: 25px -8px 0;
+  padding: 15px 4px 5px;
+  border-top: 1px solid #f0d8e5;
+  background: linear-gradient(
+    to top,
+    #f6e9f8aa,
+    transparent
+  );
+}
+
+.flower-garden span {
+  display: inline-block;
+  font-size: clamp(1.5rem, 4vw, 2.3rem);
+  transform-origin: bottom center;
+  animation: flowerSway 3s ease-in-out infinite;
+  filter: drop-shadow(0 3px 3px #a8759522);
+}
+
+.flower-garden span:nth-child(3n) {
+  animation-delay: -1s;
+}
+
+.flower-garden span:nth-child(3n + 1) {
+  animation-delay: -2s;
+}
+
+@keyframes flowerSway {
+  0%, 100% { transform: rotate(-5deg) translateY(0); }
+  50% { transform: rotate(5deg) translateY(-4px); }
+}
+
     footer{font-family:Arial,sans-serif;font-size:.75rem;color:#b28a9b;margin-top:26px}
     @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition:none!important}}
   </style>
@@ -114,7 +153,21 @@
         <p class="emphasis">loving YOU is the best thing that ever happened to me</p>
         <p class="closing"><strong>Always yours Mine. 🌙❤️</strong></p>
       </article>
-      <footer>made with a little code and a whole lot of love ✨</footer>
+      
+</article>
+
+<div class="flower-garden" aria-label="A colourful garden of flowers">
+  <span>🪻</span><span>🤍</span><span>🌹</span>
+  <span>🌷</span><span>💜</span><span>🌹</span>
+  <span>🤍</span><span>🪻</span><span>🌷</span>
+  <span>🌹</span><span>🤍</span><span>🪻</span>
+  <span>🌷</span><span>🌹</span><span>💜</span>
+  <span>🤍</span><span>🌹</span><span>🪻</span>
+  <span>🌷</span><span>🤍</span><span>🌹</span>
+</div>
+
+<footer>made with a little code and a whole lot of love ✨</footer>
+      
     </section>
   </main>
   <script>
@@ -171,7 +224,7 @@ function startFloatingHearts() {
       (Math.random() * 160 - 80) + 'px'
     );
 
-    heart.style.fontSize = (16 + Math.random() * 20) + 'px';
+    heart.style.fontSize = (28 + Math.random() * 26) + 'px';
     heart.style.animationDuration = (6 + Math.random() * 4) + 's';
 
     document.body.appendChild(heart);
