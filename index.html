@@ -564,21 +564,122 @@
     <path d="M36 27 Q40 18 48 22" fill="none" stroke="#ffd5de" stroke-width="3" stroke-linecap="round" opacity=".8"/>
   </svg>
 
-  <svg class="garden-flower tulip" viewBox="0 0 90 150" aria-hidden="true">
-    <defs>
-      <linearGradient id="tulipShade" x1="0" y1="0" x2="1" y2="1">
-        <stop offset="0" stop-color="#ffd3e0"/>
-        <stop offset=".5" stop-color="#ed91b2"/>
-        <stop offset="1" stop-color="#ad4c82"/>
-      </linearGradient>
-    </defs>
-    <path d="M45 148 Q41 95 45 47" fill="none" stroke="url(#stemGreen)" stroke-width="4"/>
-    <path d="M43 121 Q12 103 18 82 Q39 91 43 121Z" fill="#82a977"/>
-    <path d="M45 132 Q69 106 69 89 Q50 97 45 132Z" fill="#547f50"/>
-    <path d="M45 57 C25 49 17 33 25 15 Q37 22 43 37 C45 16 56 8 65 12 Q74 31 49 57Z" fill="url(#tulipShade)" stroke="#b95885" stroke-width="1.5"/>
-    <path d="M44 53 Q34 35 31 22" fill="none" stroke="#ffe2ea" stroke-width="3" stroke-linecap="round" opacity=".85"/>
-    <path d="M49 53 Q63 31 62 17" fill="none" stroke="#c45f90" stroke-width="2" stroke-linecap="round"/>
-  </svg>
+
+<svg class="garden-flower tulip" viewBox="0 0 90 150" aria-hidden="true">
+  <defs>
+    <linearGradient id="botanicalTulipPetal" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffe1ec"/>
+      <stop offset=".38" stop-color="#f5a6c4"/>
+      <stop offset=".75" stop-color="#df719f"/>
+      <stop offset="1" stop-color="#ad477b"/>
+    </linearGradient>
+
+    <linearGradient id="botanicalTulipSide" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#c75c91"/>
+      <stop offset=".48" stop-color="#f6a9c6"/>
+      <stop offset="1" stop-color="#e77ca8"/>
+    </linearGradient>
+
+    <linearGradient id="botanicalTulipInner" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffdce9"/>
+      <stop offset=".55" stop-color="#f49cbd"/>
+      <stop offset="1" stop-color="#d45d91"/>
+    </linearGradient>
+
+    <linearGradient id="botanicalTulipLeaf" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#b4cf91"/>
+      <stop offset=".5" stop-color="#739b66"/>
+      <stop offset="1" stop-color="#416e4c"/>
+    </linearGradient>
+
+    <filter id="botanicalTulipShadow" x="-40%" y="-30%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="1.4"/>
+    </filter>
+  </defs>
+
+  <!-- Soft shadow beneath the bloom -->
+  <ellipse cx="45" cy="57" rx="23" ry="5"
+    fill="#a64f7a" opacity=".15"
+    filter="url(#botanicalTulipShadow)"/>
+
+  <!-- Curved green stem -->
+  <path d="M45 148 C42 119 47 91 45 55"
+    fill="none" stroke="#527e50" stroke-width="4"
+    stroke-linecap="round"/>
+
+  <path d="M44 145 C43 116 46 86 45 58"
+    fill="none" stroke="#a5c18b" stroke-width="1.2"
+    stroke-linecap="round" opacity=".8"/>
+
+  <!-- Long natural leaves -->
+  <path d="M44 132 C28 120 12 100 19 76
+    C36 89 45 109 44 132Z"
+    fill="url(#botanicalTulipLeaf)"/>
+
+  <path d="M43 127 Q32 103 21 81"
+    fill="none" stroke="#c9dda9" stroke-width="1.4"
+    stroke-linecap="round" opacity=".85"/>
+
+  <path d="M46 143 C48 119 61 98 73 91
+    C75 115 61 135 46 143Z"
+    fill="url(#botanicalTulipLeaf)"/>
+
+  <path d="M48 137 Q59 115 70 95"
+    fill="none" stroke="#b8d09a" stroke-width="1.3"
+    stroke-linecap="round" opacity=".8"/>
+
+  <!-- Back petals -->
+  <path d="M43 61 C29 54 17 40 23 19
+    C34 23 42 36 45 49Z"
+    fill="url(#botanicalTulipSide)"
+    stroke="#c45c8d" stroke-width=".8"/>
+
+  <path d="M47 56 C43 35 51 13 65 10
+    C74 28 65 47 51 60Z"
+    fill="url(#botanicalTulipPetal)"
+    stroke="#c45c8d" stroke-width=".8"/>
+
+  <!-- Left overlapping petal -->
+  <path d="M44 59 C28 57 15 44 19 29
+    C21 20 27 16 31 14
+    C36 28 41 39 45 49Z"
+    fill="url(#botanicalTulipPetal)"
+    stroke="#d36c99" stroke-width="1"/>
+
+  <!-- Right overlapping petal -->
+  <path d="M47 59 C61 55 76 42 69 24
+    C66 17 62 13 58 12
+    C57 29 53 42 47 51Z"
+    fill="url(#botanicalTulipSide)"
+    stroke="#bd5688" stroke-width="1"/>
+
+  <!-- Central cup-shaped petal -->
+  <path d="M31 54 C27 40 30 22 43 14
+    C46 12 48 12 50 14
+    C64 23 65 41 58 54
+    C53 61 37 61 31 54Z"
+    fill="url(#botanicalTulipInner)"
+    stroke="#d66b9b" stroke-width="1"/>
+
+  <!-- Petal folds and delicate highlights -->
+  <path d="M34 49 C34 37 37 26 43 19"
+    fill="none" stroke="#fff0f5" stroke-width="2"
+    stroke-linecap="round" opacity=".9"/>
+
+  <path d="M42 52 C43 39 46 27 48 19"
+    fill="none" stroke="#fff4f7" stroke-width="1.6"
+    stroke-linecap="round" opacity=".8"/>
+
+  <path d="M53 49 C59 38 60 29 58 22"
+    fill="none" stroke="#bd4f83" stroke-width="1.7"
+    stroke-linecap="round" opacity=".65"/>
+
+  <!-- Gentle color at the base of the bloom -->
+  <path d="M34 51 Q45 59 56 51"
+    fill="none" stroke="#c45187" stroke-width="2"
+    stroke-linecap="round" opacity=".55"/>
+</svg>
+
 
   
 
