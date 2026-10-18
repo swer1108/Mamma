@@ -1252,8 +1252,10 @@ for (let i = 0; i < 18; i++) {
   setTimeout(createHeart, i * 100);
 }
 
-// Keep a gentle stream of hearts floating
-heartTimer = setInterval(createHeart, 250);
+
+  // Keep a gentle stream of hearts floating
+  heartTimer = setInterval(createHeart, 250);
+}
 
 function stopFloatingHearts() {
   if (heartTimer !== null) {
@@ -1261,8 +1263,6 @@ function stopFloatingHearts() {
     heartTimer = null;
   }
 }
-    
-
 
 
 const finalPromise = document.getElementById('finalPromise');
