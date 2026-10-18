@@ -164,6 +164,36 @@
   }
 }
 
+/* Mamma's final promise ❤️ */
+#finalPromise {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(12px);
+  transition:
+    opacity 1.5s ease,
+    transform 1.5s ease,
+    visibility 1.5s ease;
+}
+
+#finalPromise.show-promise {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  animation: promiseGlow 2.5s ease-in-out infinite alternate;
+}
+
+@keyframes promiseGlow {
+  from {
+    text-shadow: 0 0 5px #ffb6d5,
+                 0 0 10px #ffb6d5;
+  }
+  to {
+    text-shadow: 0 0 12px #ff8fc5,
+                 0 0 24px #ff8fc5,
+                 0 0 35px #ffc4df;
+  }
+}
+
 
     footer{font-family:Arial,sans-serif;font-size:.75rem;color:#b28a9b;margin-top:26px}
     @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition:none!important}}
