@@ -94,8 +94,89 @@
 }
 
 @keyframes flowerSway {
-  0%, 100% { transform: rotate(-5deg) translateY(0); }
-  50% { transform: rotate(5deg) translateY(-4px); }
+  
+/* Mamma's little botanical garden 💐 */
+.flower-garden {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0 3px;
+  margin: 26px -10px 0;
+  padding: 18px 4px 0;
+  border-top: 1px solid #ead5e4;
+  border-radius: 45% 45% 0 0 / 12% 12% 0 0;
+  background: linear-gradient(
+    to top,
+    #e4efdbaa,
+    #f8edf566 55%,
+    transparent
+  );
+}
+
+.flower-garden svg {
+  width: clamp(34px, 8vw, 58px);
+  height: clamp(76px, 17vw, 108px);
+  flex: 0 0 auto;
+  overflow: visible;
+  transform-origin: 50% 100%;
+  animation: flowerSway 4s ease-in-out infinite;
+}
+
+.flower-garden svg:nth-child(3n) {
+  animation-delay: -1.4s;
+}
+
+.flower-garden svg:nth-child(3n + 1) {
+  animation-delay: -2.6s;
+}
+
+.flower-garden .stem {
+  fill: none;
+  stroke: #64865d;
+  stroke-width: 2.6;
+  stroke-linecap: round;
+}
+
+.flower-garden .leaf {
+  fill: #83a77a;
+  stroke: #64865d;
+  stroke-width: 1;
+}
+
+.flower-garden .lavender-petal {
+  fill: #b8a0df;
+  stroke: #8e75bb;
+  stroke-width: .65;
+}
+
+.flower-garden .white-petal {
+  fill: #fffdf8;
+  stroke: #d9cbd2;
+  stroke-width: .7;
+}
+
+.flower-garden .rose-petal {
+  fill: #c94363;
+  stroke: #96334d;
+  stroke-width: .8;
+}
+
+.flower-garden .rose-light {
+  fill: #e87891;
+  stroke: #b63c59;
+  stroke-width: .8;
+}
+
+.flower-garden .center {
+  fill: #eac66f;
+  stroke: #c99d4b;
+  stroke-width: .8;
+}
+
+@keyframes flowerSway {
+  0%, 100% { transform: rotate(-3deg); }
+  50% { transform: rotate(3deg); }
 }
 
     footer{font-family:Arial,sans-serif;font-size:.75rem;color:#b28a9b;margin-top:26px}
@@ -156,15 +237,181 @@
       
 </article>
 
-<div class="flower-garden" aria-label="A colourful garden of flowers">
-  <span>🪻</span><span>🤍</span><span>🌹</span>
-  <span>🌷</span><span>💜</span><span>🌹</span>
-  <span>🤍</span><span>🪻</span><span>🌷</span>
-  <span>🌹</span><span>🤍</span><span>🪻</span>
-  <span>🌷</span><span>🌹</span><span>💜</span>
-  <span>🤍</span><span>🌹</span><span>🪻</span>
-  <span>🌷</span><span>🤍</span><span>🌹</span>
+
+<div class="flower-garden" aria-label="Lavender, white daisies and red roses">
+
+  <!-- Lavender sprig -->
+  <svg viewBox="0 0 60 100" aria-hidden="true">
+    <path class="stem" d="M30 98 Q27 65 34 15"/>
+    <path class="leaf" d="M29 78 Q8 77 9 62 Q25 64 29 78Z"/>
+    <path class="leaf" d="M30 64 Q48 60 49 47 Q34 49 30 64Z"/>
+    <path class="leaf" d="M31 49 Q14 46 16 34 Q29 36 31 49Z"/>
+    <g class="lavender-petal">
+      <ellipse cx="29" cy="19" rx="5" ry="8" transform="rotate(-30 29 19)"/>
+      <ellipse cx="37" cy="24" rx="5" ry="7" transform="rotate(35 37 24)"/>
+      <ellipse cx="29" cy="30" rx="5" ry="7" transform="rotate(-30 29 30)"/>
+      <ellipse cx="37" cy="36" rx="5" ry="7" transform="rotate(35 37 36)"/>
+      <ellipse cx="29" cy="41" rx="5" ry="7" transform="rotate(-30 29 41)"/>
+      <ellipse cx="35" cy="13" rx="4" ry="6"/>
+    </g>
+  </svg>
+
+  <!-- White daisy -->
+  <svg viewBox="0 0 60 100" aria-hidden="true">
+    <path class="stem" d="M30 98 Q33 65 30 31"/>
+    <path class="leaf" d="M31 76 Q49 72 49 59 Q35 61 31 76Z"/>
+    <path class="leaf" d="M31 86 Q13 84 12 72 Q27 73 31 86Z"/>
+    <g class="white-petal">
+      <ellipse cx="30" cy="19" rx="5" ry="11"/>
+      <ellipse cx="30" cy="19" rx="5" ry="11" transform="rotate(45 30 30)"/>
+      <ellipse cx="30" cy="19" rx="5" ry="11" transform="rotate(90 30 30)"/>
+      <ellipse cx="30" cy="19" rx="5" ry="11" transform="rotate(135 30 30)"/>
+      <ellipse cx="30" cy="19" rx="5" ry="11" transform="rotate(180 30 30)"/>
+      <ellipse cx="30" cy="19" rx="5" ry="11" transform="rotate(225 30 30)"/>
+      <ellipse cx="30" cy="19" rx="5" ry="11" transform="rotate(270 30 30)"/>
+      <ellipse cx="30" cy="19" rx="5" ry="11" transform="rotate(315 30 30)"/>
+    </g>
+    <circle class="center" cx="30" cy="30" r="7"/>
+  </svg>
+
+  <!-- Red rose -->
+  <svg viewBox="0 0 60 100" aria-hidden="true">
+    <path class="stem" d="M30 98 Q27 68 30 31"/>
+    <path class="leaf" d="M29 78 Q9 73 12 60 Q26 64 29 78Z"/>
+    <path class="leaf" d="M30 65 Q48 65 49 51 Q35 52 30 65Z"/>
+    <path class="leaf" d="M30 88 Q43 82 43 73 Q32 74 30 88Z"/>
+    <g>
+      <path class="rose-petal" d="M30 36 C12 37 12 19 24 17 C17 7 34 3 39 13 C53 10 53 28 42 32 C39 39 34 39 30 36Z"/>
+      <path class="rose-light" d="M30 34 C20 31 23 20 31 21 C37 12 46 21 40 28 C38 34 34 36 30 34Z"/>
+      <path class="rose-petal" d="M30 30 Q24 22 33 19 Q41 23 34 29Z"/>
+    </g>
+  </svg>
+
+  <!-- Lavender sprig -->
+  <svg viewBox="0 0 60 100" aria-hidden="true">
+    <path class="stem" d="M30 98 Q34 62 27 17"/>
+    <path class="leaf" d="M30 79 Q12 78 11 65 Q26 65 30 79Z"/>
+    <path class="leaf" d="M31 61 Q48 57 47 44 Q34 47 31 61Z"/>
+    <g class="lavender-petal">
+      <ellipse cx="25" cy="22" rx="5" ry="7"/>
+      <ellipse cx="32" cy="27" rx="5" ry="7"/>
+      <ellipse cx="24" cy="32" rx="5" ry="7"/>
+      <ellipse cx="32" cy="37" rx="5" ry="7"/>
+      <ellipse cx="26" cy="42" rx="5" ry="7"/>
+      <ellipse cx="27" cy="15" rx="4" ry="6"/>
+    </g>
+  </svg>
+
+  <!-- White daisy -->
+  <svg viewBox="0 0 60 100" aria-hidden="true">
+    <path class="stem" d="M30 98 Q28 65 31 31"/>
+    <path class="leaf" d="M30 75 Q12 71 13 59 Q26 61 30 75Z"/>
+    <path class="leaf" d="M30 85 Q47 82 47 69 Q34 71 30 85Z"/>
+    <g class="white-petal">
+      <ellipse cx="30" cy="19" rx="4.5" ry="11"/>
+      <ellipse cx="30" cy="19" rx="4.5" ry="11" transform="rotate(45 30 30)"/>
+      <ellipse cx="30" cy="19" rx="4.5" ry="11" transform="rotate(90 30 30)"/>
+      <ellipse cx="30" cy="19" rx="4.5" ry="11" transform="rotate(135 30 30)"/>
+      <ellipse cx="30" cy="19" rx="4.5" ry="11" transform="rotate(180 30 30)"/>
+      <ellipse cx="30" cy="19" rx="4.5" ry="11" transform="rotate(225 30 30)"/>
+      <ellipse cx="30" cy="19" rx="4.5" ry="11" transform="rotate(270 30 30)"/>
+      <ellipse cx="30" cy="19" rx="4.5" ry="11" transform="rotate(315 30 30)"/>
+    </g>
+    <circle class="center" cx="30" cy="30" r="7"/>
+  </svg>
+
+  <!-- Red rose -->
+  <svg viewBox="0 0 60 100" aria-hidden="true">
+    <path class="stem" d="M30 98 Q34 67 29 32"/>
+    <path class="leaf" d="M31 76 Q49 73 49 59 Q35 61 31 76Z"/>
+    <path class="leaf" d="M29 86 Q13 83 12 72 Q25 73 29 86Z"/>
+    <path class="rose-petal" d="M30 36 C13 35 14 18 24 17 C17 7 35 3 39 14 C52 10 53 26 42 32 C40 39 34 39 30 36Z"/>
+    <path class="rose-light" d="M30 34 C21 30 24 20 31 21 C39 13 45 23 40 29 C37 34 34 36 30 34Z"/>
+    <path class="rose-petal" d="M30 30 Q24 22 33 19 Q41 23 34 29Z"/>
+  </svg>
+
+  <!-- Repeat the flower varieties to fill the garden -->
+  <svg viewBox="0 0 60 100" aria-hidden="true">
+    <path class="stem" d="M30 98 Q27 65 34 15"/>
+    <path class="leaf" d="M29 78 Q8 77 9 62 Q25 64 29 78Z"/>
+    <path class="leaf" d="M30 64 Q48 60 49 47 Q34 49 30 64Z"/>
+    <g class="lavender-petal">
+      <ellipse cx="29" cy="19" rx="5" ry="8"/>
+      <ellipse cx="37" cy="24" rx="5" ry="7"/>
+      <ellipse cx="29" cy="30" rx="5" ry="7"/>
+      <ellipse cx="37" cy="36" rx="5" ry="7"/>
+      <ellipse cx="29" cy="41" rx="5" ry="7"/>
+      <ellipse cx="35" cy="13" rx="4" ry="6"/>
+    </g>
+  </svg>
+
+  <svg viewBox="0 0 60 100" aria-hidden="true">
+    <path class="stem" d="M30 98 Q33 65 30 31"/>
+    <path class="leaf" d="M31 76 Q49 72 49 59 Q35 61 31 76Z"/>
+    <g class="white-petal">
+      <ellipse cx="30" cy="19" rx="5" ry="11"/>
+      <ellipse cx="30" cy="19" rx="5" ry="11" transform="rotate(45 30 30)"/>
+      <ellipse cx="30" cy="19" rx="5" ry="11" transform="rotate(90 30 30)"/>
+      <ellipse cx="30" cy="19" rx="5" ry="11" transform="rotate(135 30 30)"/>
+      <ellipse cx="30" cy="19" rx="5" ry="11" transform="rotate(180 30 30)"/>
+      <ellipse cx="30" cy="19" rx="5" ry="11" transform="rotate(225 30 30)"/>
+      <ellipse cx="30" cy="19" rx="5" ry="11" transform="rotate(270 30 30)"/>
+      <ellipse cx="30" cy="19" rx="5" ry="11" transform="rotate(315 30 30)"/>
+    </g>
+    <circle class="center" cx="30" cy="30" r="7"/>
+  </svg>
+
+  <svg viewBox="0 0 60 100" aria-hidden="true">
+    <path class="stem" d="M30 98 Q27 68 30 31"/>
+    <path class="leaf" d="M29 78 Q9 73 12 60 Q26 64 29 78Z"/>
+    <path class="leaf" d="M30 65 Q48 65 49 51 Q35 52 30 65Z"/>
+    <path class="rose-petal" d="M30 36 C12 37 12 19 24 17 C17 7 34 3 39 13 C53 10 53 28 42 32 C39 39 34 39 30 36Z"/>
+    <path class="rose-light" d="M30 34 C20 31 23 20 31 21 C37 12 46 21 40 28 C38 34 34 36 30 34Z"/>
+    <path class="rose-petal" d="M30 30 Q24 22 33 19 Q41 23 34 29Z"/>
+  </svg>
+
+  <svg viewBox="0 0 60 100" aria-hidden="true">
+    <path class="stem" d="M30 98 Q34 62 27 17"/>
+    <path class="leaf" d="M30 79 Q12 78 11 65 Q26 65 30 79Z"/>
+    <path class="leaf" d="M31 61 Q48 57 47 44 Q34 47 31 61Z"/>
+    <g class="lavender-petal">
+      <ellipse cx="25" cy="22" rx="5" ry="7"/>
+      <ellipse cx="32" cy="27" rx="5" ry="7"/>
+      <ellipse cx="24" cy="32" rx="5" ry="7"/>
+      <ellipse cx="32" cy="37" rx="5" ry="7"/>
+      <ellipse cx="26" cy="42" rx="5" ry="7"/>
+      <ellipse cx="27" cy="15" rx="4" ry="6"/>
+    </g>
+  </svg>
+
+  <svg viewBox="0 0 60 100" aria-hidden="true">
+    <path class="stem" d="M30 98 Q28 65 31 31"/>
+    <path class="leaf" d="M30 75 Q12 71 13 59 Q26 61 30 75Z"/>
+    <path class="leaf" d="M30 85 Q47 82 47 69 Q34 71 30 85Z"/>
+    <g class="white-petal">
+      <ellipse cx="30" cy="19" rx="4.5" ry="11"/>
+      <ellipse cx="30" cy="19" rx="4.5" ry="11" transform="rotate(45 30 30)"/>
+      <ellipse cx="30" cy="19" rx="4.5" ry="11" transform="rotate(90 30 30)"/>
+      <ellipse cx="30" cy="19" rx="4.5" ry="11" transform="rotate(135 30 30)"/>
+      <ellipse cx="30" cy="19" rx="4.5" ry="11" transform="rotate(180 30 30)"/>
+      <ellipse cx="30" cy="19" rx="4.5" ry="11" transform="rotate(225 30 30)"/>
+      <ellipse cx="30" cy="19" rx="4.5" ry="11" transform="rotate(270 30 30)"/>
+      <ellipse cx="30" cy="19" rx="4.5" ry="11" transform="rotate(315 30 30)"/>
+    </g>
+    <circle class="center" cx="30" cy="30" r="7"/>
+  </svg>
+
+  <svg viewBox="0 0 60 100" aria-hidden="true">
+    <path class="stem" d="M30 98 Q34 67 29 32"/>
+    <path class="leaf" d="M31 76 Q49 73 49 59 Q35 61 31 76Z"/>
+    <path class="leaf" d="M29 86 Q13 83 12 72 Q25 73 29 86Z"/>
+    <path class="rose-petal" d="M30 36 C13 35 14 18 24 17 C17 7 35 3 39 14 C52 10 53 26 42 32 C40 39 34 39 30 36Z"/>
+    <path class="rose-light" d="M30 34 C21 30 24 20 31 21 C39 13 45 23 40 29 C37 34 34 36 30 34Z"/>
+    <path class="rose-petal" d="M30 30 Q24 22 33 19 Q41 23 34 29Z"/>
+  </svg>
+
 </div>
+
 
 <footer>made with a little code and a whole lot of love ✨</footer>
       
